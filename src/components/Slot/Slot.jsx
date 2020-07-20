@@ -12,24 +12,26 @@ const Slot = ({ clicked, stop }) => {
   ];
 
   return (
-    // <div className={styles.machine}>
+    <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
       <div className={styles.slots}>
         <ul className={clicked ? styles.spin : styles.slot}>
           {adjWords.map((word, index) => (
             <li className={styles.number} key={index}>
-              {clicked ? word : stop ? word : 'smallest' }
-            </li>
-          ))}
-        </ul>
-        <ul className={clicked ? styles.spin : styles.slot}>
-          {nounWords.map((word, index) => (
-            <li className={styles.number} key={index}>
-              {clicked ? word : stop ? word : 'shoes' }
+              {clicked ? word.toUpperCase() : stop ? word.toUpperCase() : 'SMALLEST' }
             </li>
           ))}
         </ul>
       </div>
-    // </div>
+      <div className={styles.slots}>
+        <ul className={clicked ? styles.spin : styles.slot}>
+          {nounWords.map((word, index) => (
+            <li className={styles.number} key={index}>
+              {clicked ? word.toUpperCase() : stop ? word.toUpperCase() : 'SHOES' }
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
   );
 };
 
