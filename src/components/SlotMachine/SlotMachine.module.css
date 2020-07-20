@@ -1,0 +1,20 @@
+.container {
+  height: 100vh;
+  width: 375px;
+  position: relative;
+  background: #f0f1f1;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+button {
+  width: 225px;
+  height: 50px;
+  border-radius: 50px;
+  border: none;
+  background: #8A8785;
+  color: white;
+  font-size: 18px;
+  margin: auto;
+  margin-top: 0;
+}
