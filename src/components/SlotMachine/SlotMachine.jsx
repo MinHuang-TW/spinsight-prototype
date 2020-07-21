@@ -1,7 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import Slot from '../Slot/Slot';
-import StatusBar from '../../img/nav-bar.png';
-import DoneMessage from '../../img/done-message.png';
+import DoneMessage from '../DoneMessage/DoneMessage';
 import styles from './SlotMachine.module.css';
 
 const SlotMachine = () => {
@@ -33,46 +32,35 @@ const SlotMachine = () => {
   }, []);
 
   return (
-    <div className={styles.container}>
-      <div 
-        className={done === 'submit' ? styles.filter : styles.nofilter} 
-        onClick={handleCancle} 
-      />
-      <nav>
-        <img src={StatusBar} alt='status bar' width='100%' />
-      </nav>
-      <div>
-        <h1>Hello, Jane!</h1>
+    <>
+      <DoneMessage done={done === 'submit'} handleCancle={handleCancle} />
+      <div className={styles.container}>
         <h2>Who has</h2>
-      </div>
-      <div className={styles.main}>
-        <img 
-          className={done === 'submit' ? styles.done : styles.undo} 
-          src={DoneMessage} 
-          alt='done-message' 
-        />
-        <Slot clicked={clicked} stop={stop} />
-      </div>
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        {stop 
-          ? <input type='text' placeholder='Anwser' onChange={handleChange} /> 
-          : <div style={{ height: 117 }} />}
+        <div className={styles.main}>
+          <Slot clicked={clicked} stop={stop} />
+      
+          {stop 
+            ? <input type='text' placeholder='Anwser' onChange={handleChange} /> 
+            : <div style={{ height: 171 }} />}
 
-        {clicked 
-          ? (<button onClick={handleStop}>Stop</button>)
-          : stop 
-            ? (<button 
-                className={styles.send} 
-                onClick={handleSubmit} 
-                disabled={done === 'done' ? false : true}
-                style={{ opacity: done === 'done' ? 1 : 0.2 }}
-              >
-                Send
-              </button>)
-            : (<button onClick={handleClick}>Get a Question</button>)}
+          {clicked 
+            ? (<button onClick={handleStop}>Stop</button>)
+            : stop 
+              ? (<button 
+                  className={styles.send} 
+                  onClick={handleSubmit} 
+                  disabled={done === 'done' ? false : true}
+                  style={{ opacity: done === 'done' ? 1 : 0.2 }}
+                >
+                  Send
+                </button>)
+              : (<button onClick={handleClick}>
+                  Get a Question
+                </button>)}
+        </div>
       </div>
-    </div>
+    </>
   )
-}
+};
 
 export default SlotMachine;

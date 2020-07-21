@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.container input {
+  margin: 40px auto 48px;
+}
+
+.container h3 {
+  width: 210px;
+  margin: auto;
+}
+
+.main {
+  -webkit-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+}
