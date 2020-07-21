@@ -1,12 +1,13 @@
 import React, { useState, useCallback } from 'react';
 import StatusBar from '../src/img/nav-bar.png';
-import Plain from './components/Plain/Plain';
-import SlotMachine from './components/SlotMachine/SlotMachine';
+import Plain from './concepts/Plain/Plain';
+import Print from './concepts/Print/Print';
+import SlotMachine from './concepts/SlotMachine/SlotMachine';
 import './App.css';
 
 const App = () => {
   const concepts = [1, 2, 3, 4, 5];
-  const [selected, setSelected] = useState(concepts[0]);
+  const [selected, setSelected] = useState(4);
 
   const handleSelected = useCallback((concept) => () => {
     setSelected(concept);
@@ -14,6 +15,8 @@ const App = () => {
 
   const setConcept = (selected) => {
     switch (selected) {
+      case 2:
+        return <Print />;
       case 4:
         return <SlotMachine />;
       case 1:

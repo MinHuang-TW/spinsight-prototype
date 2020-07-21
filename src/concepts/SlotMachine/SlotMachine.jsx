@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
-import Slot from '../Slot/Slot';
-import DoneMessage from '../DoneMessage/DoneMessage';
+import Slot from '../../components/Slot/Slot';
+import DoneMessage from '../../components/DoneMessage/DoneMessage';
 import styles from './SlotMachine.module.css';
 
 const SlotMachine = () => {
@@ -34,7 +34,7 @@ const SlotMachine = () => {
   return (
     <>
       <DoneMessage done={done === 'submit'} handleCancle={handleCancle} />
-      <div className={styles.container}>
+      <div className={styles.container} style={{ marginTop: -42 }}>
         <h2>Who has</h2>
         <div className={styles.main}>
           <Slot clicked={clicked} stop={stop} />

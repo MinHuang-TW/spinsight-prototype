@@ -14,7 +14,12 @@
   position: relative;
   background: #f0f1f1;
   display: grid;
-  grid-template-rows: 143px auto 49px;
+  grid-template-rows: 177px auto 49px;
+}
+
+nav {
+  z-index: 100;
+  background: #f0f1f1;
 }
 
 h1 {
@@ -87,4 +92,5 @@ button,
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
