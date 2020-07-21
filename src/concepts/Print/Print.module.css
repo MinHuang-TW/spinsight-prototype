@@ -51,18 +51,20 @@
 
 .content > h3 {
   margin-top: 32px;
-  opacity: 0.7;
   z-index: 5;
 }
 
 .send {
-  /* width: 288px; */
   width: 100%;
   background: #4A90E2;
-  /* position: relative; */
   margin-left: -1px;
-  /* margin-bottom: -26px; */
   border-radius: 0px;
   opacity: 0.2;
   z-index: 5;
+}
+
+.getQuestion {
+  z-index: 5;
+  -webkit-transition: opacity 0.3s ease-in;
+  transition: opacity 0.3s ease-in;
 }

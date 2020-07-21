@@ -34,7 +34,7 @@ const SlotMachine = () => {
   return (
     <>
       <DoneMessage done={done === 'submit'} handleCancle={handleCancle} />
-      <div className={styles.container} style={{ marginTop: -42 }}>
+      <div className={styles.container}>
         <h2>Who has</h2>
         <div className={styles.main}>
           <Slot clicked={clicked} stop={stop} />

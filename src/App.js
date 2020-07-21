@@ -7,7 +7,7 @@ import './App.css';
 
 const App = () => {
   const concepts = [1, 2, 3, 4, 5];
-  const [selected, setSelected] = useState(4);
+  const [selected, setSelected] = useState(1);
 
   const handleSelected = useCallback((concept) => () => {
     setSelected(concept);
@@ -29,16 +29,16 @@ const App = () => {
     <div className='App'>
       <nav>
         <img src={StatusBar} alt='status bar' width='100%' />
-        <h1>Hello, Jane!</h1>
       </nav>
       <div className='main'>
+        <h1>Hello, Jane!</h1>
         {setConcept(selected)}
       </div>
       <div className='toolBar'>
         {concepts.map(concept => (
           <div 
-            className={selected === concept ? 'item-selected' : 'item'} 
             key={concept} 
+            className={selected === concept ? 'item-selected' : 'item'} 
             onClick={handleSelected(concept)}
           >
             {concept}

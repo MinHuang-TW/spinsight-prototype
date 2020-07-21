@@ -16,3 +16,7 @@
   -webkit-transition: opacity 0.2s ease;
   transition: opacity 0.2s ease;
 }
+
+.container > button {
+  margin-top: 4px;
+}

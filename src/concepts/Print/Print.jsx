@@ -18,47 +18,49 @@ const Print = () => {
     setClicked(true);
   }, []);
 
+  const handleSubmit = useCallback(() => {
+    setDone('submit');
+  }, []);
+
   return (
     <div className={styles.container}>
       <div className={styles.paperContainer}>
-        {/* {clicked ? ( */}
-          <div style={{ height: '100%' }}>
-            {done !== 'submit' && (
-              <div 
-                className={styles.content} 
-                style={{ marginTop: clicked ? 0 : -255 }}
+        <div style={{ height: '100%' }}>
+          {done !== 'submit' && (
+            <div 
+              className={styles.content} 
+              style={{ marginTop: clicked ? 0 : -255 }}
+            >
+              <h3>Who has shortest hair?</h3>
+              <input
+                type='text'
+                placeholder='Anwser'
+                onChange={handleChange}
+              />
+              <button
+                className={styles.send}
+                disabled={done === 'done' ? false : true}
+                style={{ opacity: done === 'done' && 1 }}
+                onClick={handleSubmit}
               >
-                <h3>Who has a shortest hair?</h3>
-                <input
-                  type='text'
-                  placeholder='Anwser'
-                  onChange={handleChange}
-                />
-                <button
-                  className={styles.send}
-                  disabled={done === 'done' ? false : true}
-                  style={{ opacity: done === 'done' && 1 }}
-                  onClick={() => setDone('submit')}
-                >
-                  Send
-                </button>
-              </div>
-            )}
-            <img src={Slot} alt='paper-slot' style={{ zIndex: 5 }} />
-            <img src={Base} alt='paper-slot' style={{ zIndex: 1 }} />
-            <img
-              className={styles.pic}
-              src={done === 'submit' ? DoneMessage : Paper}
-              alt='paper'
-              style={{ marginTop: clicked ? 0 : -255, zIndex: 1 }}
-            />
-          </div>
-        {/* ) : (
-          <img src={Slot} alt='paper-slot' />
-        )} */}
+                Send
+              </button>
+            </div>
+          )}
+          <img src={Slot} alt='paper-slot' style={{ zIndex: 5 }} />
+          <img src={Base} alt='paper-slot' style={{ zIndex: 1 }} />
+          <img
+            className={styles.pic}
+            src={done === 'submit' ? DoneMessage : Paper}
+            alt='paper of question'
+            style={{ marginTop: clicked ? 0 : -255, zIndex: 1 }}
+          />
+        </div>
       </div>
 
-      {!clicked && <Button clicked={clicked} handleClick={handleClick} />}
+      {!clicked && (
+        <Button clicked={clicked} handleClick={handleClick} />
+      )}
     </div>
   );
 };
