@@ -23,7 +23,6 @@ const Wheel = () => {
 
   const handleClick = useCallback(() => {
     setClicked(true);
-    console.log('clicked');
   }, []);
 
   return (
