@@ -48,7 +48,7 @@ const Print = () => {
             </div>
           )}
           <img src={Slot} alt='paper-slot' style={{ zIndex: 5 }} />
-          <img src={Base} alt='paper-slot' style={{ zIndex: 1 }} />
+          <img src={Base} alt='slot-base' style={{ zIndex: 1 }} />
           <img
             className={styles.pic}
             src={done === 'submit' ? DoneMessage : Paper}
