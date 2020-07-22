@@ -34,7 +34,7 @@ const Print = () => {
               <h3>Who has shortest hair?</h3>
               <input
                 type='text'
-                placeholder='Anwser'
+                placeholder='Answer'
                 onChange={handleChange}
               />
               <button

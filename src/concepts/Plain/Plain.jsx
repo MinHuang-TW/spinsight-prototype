@@ -31,7 +31,7 @@ const Plain = () => {
       <div className={styles.container}>
         <div style={{ opacity: clicked ? 1 : 0 }} className={styles.main}>
           <h3>Who has your favorite hair color?</h3>
-          <input type='text' placeholder='Anwser' onChange={handleChange} />
+          <input type='text' placeholder='Answer' onChange={handleChange} />
         </div>
 
         <Button 

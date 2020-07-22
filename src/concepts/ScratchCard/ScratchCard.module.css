@@ -1,0 +1,16 @@
+.container {
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;
+  margin-top: -9px;
+  z-index: 100;
+}
+
+.send {
+  background: #4A90E2;
+}
+
+.container > input {
+  margin: 40px auto;
+  width: 260px;
+}

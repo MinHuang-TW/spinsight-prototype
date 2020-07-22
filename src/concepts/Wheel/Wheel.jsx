@@ -35,7 +35,7 @@ const Wheel = () => {
           style={{ opacity: clicked ? 1 : 0, zIndex: clicked ? 510 : -1 }}
         >
           <h3>Who has the biggest shoe size?</h3>
-          <input type='text' placeholder='Anwser' onChange={handleChange} />
+          <input type='text' placeholder='Answer' onChange={handleChange} />
           <button
             className={done ? styles.send : styles.unsend}
             onClick={handleSubmit}

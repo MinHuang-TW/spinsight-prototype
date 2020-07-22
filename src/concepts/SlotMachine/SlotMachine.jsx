@@ -40,7 +40,7 @@ const SlotMachine = () => {
           <Slot clicked={clicked} stop={stop} />
       
           {stop 
-            ? <input type='text' placeholder='Anwser' onChange={handleChange} /> 
+            ? <input type='text' placeholder='Answer' onChange={handleChange} /> 
             : <div style={{ height: 171 }} />}
 
           {clicked 
